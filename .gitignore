@@ -1,3 +1,9 @@
+# mac files
+.DS_Store
+
+# swap files
+*.swp
+
 # Logs
 logs
 *.log

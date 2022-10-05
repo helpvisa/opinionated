@@ -1,0 +1,33 @@
+{
+  "name": "scs-project-two",
+  "version": "1.0.0",
+  "description": "UofT SCS Coding Bootcamp project two.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helpvisa/scs-project-two.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helpvisa/scs-project-two/issues"
+  },
+  "homepage": "https://github.com/helpvisa/scs-project-two#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.24.0"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2"
+  }
+}
