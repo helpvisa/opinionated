@@ -23,20 +23,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull:false
     },
-    posts:{
-        type:DataTypes.INTEGER,
-        references:{
-            model:"posts",
-            key:"id"
-        }
-    },
-    comments:{
-        type:DataTypes.INTEGER,
-        references:{
-            model:"comments",
-            key:"id"
-        }
-    }
+
   },
   {
     sequelize,

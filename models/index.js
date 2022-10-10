@@ -7,6 +7,12 @@ const Comments =require('./Comments');
 Posts.belongsTo(User,{
     foreignKey:'user_id'
 })
+Comments.belongsTo(Posts,{
+    foreignKey:'post_id'
+})
+Comments.belongsTo(User,{
+    foreignKey:'user_id'
+})
 
 module.exports ={
     User,
