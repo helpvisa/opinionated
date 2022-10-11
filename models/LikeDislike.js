@@ -17,20 +17,15 @@ Like.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
+            unique: false,
             references: {
                 model: 'user',
                 key: 'id'
             }
         },
-        comment_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'comment',
-                key: 'id'
-            }
-        },
         post_id: {
             type: DataTypes.INTEGER,
+            unique: false,
             references: {
                 model: 'post',
                 key: 'id'
@@ -42,7 +37,7 @@ Like.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'like'
+        modelName: 'likes'
     }
 );
 
@@ -56,20 +51,15 @@ Dislike.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
+            unique: false,
             references: {
                 model: 'user',
                 key: 'id'
             }
         },
-        comment_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'comment',
-                key: 'id'
-            }
-        },
         post_id: {
             type: DataTypes.INTEGER,
+            unique: false,
             references: {
                 model: 'post',
                 key: 'id'
@@ -81,7 +71,7 @@ Dislike.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'dislike'
+        modelName: 'dislikes'
     }
 );
 

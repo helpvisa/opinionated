@@ -38,42 +38,42 @@ User.belongsToMany(Post, {
     as: 'liked_posts',
     foreignKey: 'user_id'
 });
-User.belongsToMany(Comment, {
-    through: Like,
-    as: 'liked_comments',
-    foreignKey: 'user_id'
-});
+// User.belongsToMany(Comment, {
+//     through: Like,
+//     as: 'liked_comments',
+//     foreignKey: 'user_id'
+// });
 User.belongsToMany(Post, {
     through: Dislike,
     as: 'disliked_posts',
     foreignKey: 'user_id'
 });
-User.belongsToMany(Comment, {
-    through: Dislike,
-    as: 'disliked_comments',
-    foreignKey: 'user_id'
-});
+// User.belongsToMany(Comment, {
+//     through: Dislike,
+//     as: 'disliked_comments',
+//     foreignKey: 'user_id'
+// });
 //--------------------------
 Post.belongsToMany(User, {
     through: Like,
     as: 'liked_posts',
     foreignKey: 'post_id'
 });
-Comment.belongsToMany(User, {
-    through: Like,
-    as: 'liked_comments',
-    foreignKey: 'comment_id'
-});
+// Comment.belongsToMany(User, {
+//     through: Like,
+//     as: 'liked_comments',
+//     foreignKey: 'comment_id'
+// });
 Post.belongsToMany(User, {
     through: Dislike,
     as: 'disliked_posts',
     foreignKey: 'post_id'
 });
-Comment.belongsToMany(User, {
-    through: Dislike,
-    as: 'disliked_comments',
-    foreignKey: 'comment_id'
-});
+// Comment.belongsToMany(User, {
+//     through: Dislike,
+//     as: 'disliked_comments',
+//     foreignKey: 'comment_id'
+// });
 
 // likes + dislikes as they belong to posts / comments / users
 Like.belongsTo(User, {
