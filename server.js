@@ -1,5 +1,5 @@
 // dependencies
-require('dotenv').confg(); // import .env for session secret pass
+require('dotenv').config(); // import .env for session secret pass
 const path = require('path');
 const session = require('express-session');
 // session secret
@@ -40,6 +40,6 @@ app.use(session(sess)); // use our express session
 app.use(routes);
 
 // sync sequelize models to the database, then turn on the server
-sequelize.sync({force: true}).then(() => {
+sequelize.sync({force: false}).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });

@@ -1,7 +1,8 @@
 // dependencies
 const router = require('express').Router();
 const auth = require('../../utils/auth');
-const {Post, User, Comment} = require('../../models');
+const {Post, User, Comment, Like, Dislike} = require('../../models');
+const sequelize = require('../../config/connection'); // for literals
 
 // GET all posts
 router.get('/', (req, res) => {
@@ -11,9 +12,12 @@ router.get('/', (req, res) => {
             'name',
             'content',
             'created_date',
-            'updated_at'
+            'updated_at',
+            [ // return a like count after the post is liked
+                sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'like_count'
+            ]
         ],
-        order: [['created_at', 'DESC']],
+        order: [['created_date', 'DESC']],
         include: [
             {
                 model: User,
@@ -56,9 +60,12 @@ router.get('/:id', (req, res) => {
             'name',
             'content',
             'created_date',
-            'updated_at'
+            'updated_at',
+            [ // return a like count after the post is liked
+                sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'like_count'
+            ]
         ],
-        order: [['created_at', 'DESC']],
+        order: [['created_date', 'DESC']],
         include: [
             {
                 model: User,
@@ -164,7 +171,63 @@ router.put('/:id', auth, (req, res) => {
     });
 });
 
-// to-do: add like/dislike routes to posts
+// LIKE a post
+router.put('/like/:id', auth, (req, res) => {
+    Like.create({
+        user_id: req.session.user_id,
+        post_id: req.params.id
+    }).then(() => {
+        Post.findOne({
+            where: {
+                id: req.params.id
+            },
+            attributes: [
+                'id',
+                'name',
+                [ // return a like count after the post is liked
+                    sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'like_count'
+                ]
+            ]
+        })
+        .then(data => res.json(data))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// DISLIKE a post
+router.put('/dislike/:id', auth, (req, res) => {
+    Dislike.create({
+        user_id: req.session.user_id,
+        post_id: req.params.id
+    }).then(() => {
+        Post.findOne({
+            where: {
+                id: req.params.id
+            },
+            attributes: [
+                'id',
+                'name',
+                [ // return a like count after the post is liked
+                    sequelize.literal('(SELECT COUNT(*) FROM dislikes WHERE post.id = dislikes.post_id)'), 'dislike_count'
+                ]
+            ]
+        })
+        .then(data => res.json(data))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 // export
 module.exports = router;

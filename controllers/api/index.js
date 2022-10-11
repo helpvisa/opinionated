@@ -1,6 +1,6 @@
 // dependencies
 const router = require('express').Router();
-const userRoutes = require('./uuser-routes'); // routes for user creation / login / deletion
+const userRoutes = require('./user-routes'); // routes for user creation / login / deletion
 const postRoutes = require('./post-routes'); // routes for post creation / editing / deletion
 const commentRoutes = require('./comment-routes'); // routes for commention creation / deletion
 

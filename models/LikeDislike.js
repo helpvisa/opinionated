@@ -42,7 +42,7 @@ Like.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'like'
+        modelName: 'likes'
     }
 );
 
@@ -81,7 +81,7 @@ Dislike.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'dislike'
+        modelName: 'dislikes'
     }
 );
 
