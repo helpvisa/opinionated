@@ -116,5 +116,7 @@ router.post('/logout', auth, (req, res) => { // add auth check
     }
 });
 
+// to-do: add liked/disliked posts to user routes (for profiles)
+
 // export routes
 module.exports = router;
