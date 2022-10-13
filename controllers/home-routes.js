@@ -65,7 +65,6 @@ router.get('/post/:id', (req, res) => {
                 sequelize.literal('(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)'), 'comment_count'
             ]
         ],
-        order: [['created_date', 'DESC']],
         include: [
             {
                 model: User,
@@ -82,6 +81,9 @@ router.get('/post/:id', (req, res) => {
                     attributes: ['username']
                 }
             }
+        ],
+        order: [
+            [Comment, 'created_date', 'DESC']
         ]
     }).then(data => {
         // map and serialize

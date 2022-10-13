@@ -7,16 +7,11 @@
         <h4>In the opinion of <a class="no-dec username logo" href="/{{user.username}}">{{user.username}}</a></h4>
         <h5>Thought up on {{formatDate created_date}}</h5>
     </div>
+
     <!-- opinion content -->
     <div>
         <p>{{content}}</p>
     </div>
-    <!-- comment count -->
-    <h6>
-        <span data-post-id="{{id}}" class="clickable like">{{like_count}} {{formatPlural 'like' like_count}}</span> | <!-- make clickable -->
-        <span data-post-id="{{id}}" class="clickable dislike">{{dislike_count}} {{formatPlural 'dislike' dislike_count}}</span> | <!-- make clickable -->
-        <span data-post-id="{{id}}" class="clickable comment-page">{{comment_count}} {{formatPlural 'comment' comment_count}}</span>
-    </h6>
 
     <!-- likes/dislikes bar graph -->
     <div>
@@ -67,4 +62,13 @@
             );
         </script>
     </div>
+
+    <!-- comment count -->
+    <h6>
+        <span data-post-id="{{id}}" class="clickable like">{{like_count}} {{formatPlural 'like' like_count}}</span> | <!-- make clickable -->
+        <span data-post-id="{{id}}" class="clickable dislike">{{dislike_count}} {{formatPlural 'dislike' dislike_count}}</span> | <!-- make clickable -->
+        <span data-post-id="{{id}}" class="clickable comment-page">{{comment_count}} {{formatPlural 'comment' comment_count}}</span>
+    </h6>
+
+    <div class="bottom-border"></div>
 </article>

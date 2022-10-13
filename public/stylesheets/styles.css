@@ -145,3 +145,8 @@ textarea {
 .username {
   color: lightcoral;
 }
+
+.bottom-border {
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 2px;
+}
