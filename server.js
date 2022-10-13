@@ -1,5 +1,6 @@
 // dependencies
 require('dotenv').config(); // import .env for session secret pass
+const helpers = require('./utils/helpers');
 const path = require('path');
 const session = require('express-session');
 // session secret
@@ -9,6 +10,10 @@ const express = require('express');
 const routes = require('./controllers');
 // import sequelize connection
 const sequelize = require('./config/connection')
+
+// setup handlebars template engine
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({helpers}); // create handlebars engine and import helper functions (object)
 
 // setup session
 // storage
@@ -29,6 +34,10 @@ const sess = {
 // init express app + port
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// template engine configuration
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // middleware
 app.use(express.json());

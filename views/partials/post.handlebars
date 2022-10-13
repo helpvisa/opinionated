@@ -1,0 +1,20 @@
+<!-- display data for given post -->
+<!-- in desperate need of some CSS -->
+<article>
+    <!-- opinion name -->
+    <div>
+        <h2><a href="/post/{{id}}">{{name}}</a></h2>
+        <h4>In the opinion of {{user.username}}</h4>
+        <h5>Thought up on {{formatDate created_date}}</h5>
+    </div>
+    <!-- opinion content -->
+    <div>
+        <p>{{content}}</p>
+    </div>
+    <!-- comment count -->
+    <h6>
+        <span class="clickable">{{like_count}} {{formatPlural 'like' like_count}}</span> | <!-- make clickable -->
+        <span class="clickable">{{dislike_count}} {{formatPlural 'dislike' dislike_count}}</span> | <!-- make clickable -->
+        <span class="clickable">{{comment_count}} {{formatPlural 'comment' comment_count}}</span>
+    </h6>
+</article>

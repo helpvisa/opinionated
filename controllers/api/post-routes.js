@@ -15,6 +15,9 @@ router.get('/', (req, res) => {
             'updated_at',
             [ // return a like count after the post is liked
                 sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'like_count'
+            ],
+            [ // return a like count after the post is liked
+                sequelize.literal('(SELECT COUNT(*) FROM dislikes WHERE post.id = dislikes.post_id)'), 'dislike_count'
             ]
         ],
         order: [['created_date', 'DESC']],
@@ -63,6 +66,9 @@ router.get('/:id', (req, res) => {
             'updated_at',
             [ // return a like count after the post is liked
                 sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'like_count'
+            ],
+            [ // return a like count after the post is liked
+                sequelize.literal('(SELECT COUNT(*) FROM dislikes WHERE post.id = dislikes.post_id)'), 'dislike_count'
             ]
         ],
         order: [['created_date', 'DESC']],

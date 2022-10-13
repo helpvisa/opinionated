@@ -86,10 +86,7 @@ router.put('/like/:id', auth, (req, res) => {
             },
             attributes: [
                 'id',
-                'name',
-                [ // return a like count after the post is liked
-                    sequelize.literal('(SELECT COUNT(*) FROM likes WHERE comment.id = likes.comment_id)'), 'like_count'
-                ]
+                'name'
             ]
         })
         .then(data => res.json(data))
@@ -115,10 +112,7 @@ router.put('/dislike/:id', auth, (req, res) => {
             },
             attributes: [
                 'id',
-                'name',
-                [ // return a like count after the post is liked
-                    sequelize.literal('(SELECT COUNT(*) FROM dislikes WHERE comment.id = dislikes.comment_id)'), 'dislike_count'
-                ]
+                'name'
             ]
         })
         .then(data => res.json(data))
