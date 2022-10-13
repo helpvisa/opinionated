@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
     <!-- Internal css -->
-    <link rel="stylesheet" href="./stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
 </head>
 
 <body>
@@ -23,21 +23,30 @@
 
         <!-- Menu -->
         <div id="menu">
-        <span id="show-register" class="clickable">Register</span>
-        <span id="show-login" class="clickable">Login</span>
-        <label id="user-handle" class="hide"></label>
-        <div id="img-dropdown" class="clickable">
-            <!-- possibility of adding an avatar -->
-            <!-- <img id="" class="clickable"> -->
-            <div id="logged-menu" class="hide">
-            <ul>
-                <li id="logout" class="clickable">Logout</li>
-                <li id="settings" class="clickable">Settings</li>
-            </ul>
+            {{#if loggedIn}}
+            <label id="user-handle"></label>
+            <div id="img-dropdown" class="clickable">
+                <!-- possibility of adding an avatar -->
+                <!-- <img id="" class="clickable"> -->
+                <div id="logged-menu">
+                <ul>
+                    <li id="logout" class="clickable">Logout</li>
+                    <li id="settings" class="clickable">Settings</li>
+                </ul>
+                </div>
             </div>
-        </div>
+            {{else}}
+            <span id="show-register" class="clickable">Register</span>
+            <span id="show-login" class="clickable">Login</span>
+            {{/if}}
         </div>
     </nav>
+
+    <!-- login partial -->
+    <div>
+        {{> login}}
+        {{> register}}
+    </div>
 
     <!-- Main content here -->
     <main class="container">
@@ -47,6 +56,7 @@
     <!-- External JS -->
 
     <!-- Internal JS -->
-
+    <script src="/javascript/login.js"></script>
+    <script src="/javascript/logout.js"></script>
 </body>
 </html>
