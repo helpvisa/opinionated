@@ -24,6 +24,23 @@ body {
   background-color: var(--quaternary-color);
 }
 
+.clickable {
+  cursor: pointer
+}
+
+.hide {
+  display: none;
+}
+
+.error {
+  /* maybe another color! */
+  color: brown;
+}
+
+.modal {
+  
+}
+
 /* ===2. NAVIGATION BAR === */
 .navbar {
   background-color: var(--primary-color);
@@ -46,7 +63,7 @@ body {
 }
 
 /* ===3. HOMEPAGE === */
-.form-container {
+.container {
   display: flex;
   justify-content: center;
   text-align: center;
