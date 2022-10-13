@@ -30,6 +30,10 @@ Project is created using:
 
 ## Mockup
 
+![screenshot1](img/screenshots/screenshot1.jpg)
+
+![screenshot2](img/screenshots/screenshot2.jpg)
+
 ## How to install and run the project
 Here are some guidelines for installing the project on your local machine:
 1. Clone or download the repository to your own local machine.
