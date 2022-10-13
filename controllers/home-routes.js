@@ -139,10 +139,17 @@ router.get('/:user', (req, res) => {
                 }
             ]
         }).then(data => {
+            let hasPosts = true;
             // map and serialize
             const posts = data.map(post => post.get({ plain: true }));
+
+            if (posts.length < 1) {
+                hasPosts = false;
+            }
+
             // render page and pass in posts
-            res.render('user', {posts, loggedIn: req.session.loggedIn, user: data[0].user.username});
+            res.render('user', {posts, loggedIn: req.session.loggedIn, user: req.session.username, viewed_user: req.params.user, hasPosts});
+            
         }).catch(err => {
             console.log(err);
             res.status(500).send("<h1>500!</h1>");
