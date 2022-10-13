@@ -1,0 +1,16 @@
+<!-- external js (needs to be first) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="column">
+    <div>
+        <h1>{{user}}'s Posts:</h1>
+    </div>
+    <!-- user posts -->
+    <section id="opinion-container">
+        {{#each posts as |post|}} <!-- loop over each post -->
+        <div>
+            {{> post post}}
+        </div>
+        {{/each}}
+    </section>
+</div>

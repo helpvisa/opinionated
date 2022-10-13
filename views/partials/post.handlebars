@@ -3,8 +3,8 @@
 <article>
     <!-- opinion name -->
     <div>
-        <h2><a href="/post/{{id}}">{{name}}</a></h2>
-        <h4>In the opinion of {{user.username}}</h4>
+        <h2><a class="no-dec link logo" href="/post/{{id}}">{{name}}</a></h2>
+        <h4>In the opinion of <a class="no-dec username logo" href="/{{user.username}}">{{user.username}}</a></h4>
         <h5>Thought up on {{formatDate created_date}}</h5>
     </div>
     <!-- opinion content -->

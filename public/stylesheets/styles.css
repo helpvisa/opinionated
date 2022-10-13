@@ -128,3 +128,16 @@ textarea {
   display: flex;
   flex-direction: column;
 }
+
+.no-dec {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link {
+  color: lightblue;
+}
+
+.username {
+  color: lightcoral;
+}
