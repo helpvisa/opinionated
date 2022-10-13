@@ -21,6 +21,7 @@
 body {
   display: flex;
   flex-direction: column;
+  background-color: var(--quaternary-color);
 }
 
 /* ===2. NAVIGATION BAR === */
@@ -40,7 +41,7 @@ body {
   color: darkseagreen;
 }
 
-.settings:hover {
+.account:hover {
   color: darkseagreen;
 }
 
