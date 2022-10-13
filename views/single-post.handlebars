@@ -1,0 +1,36 @@
+<!-- external js (needs to be first) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="column">
+    <!-- main post -->
+    <section id="opinion-container">
+        <div>
+            {{> post post}}
+        </div>
+    </section>
+
+    <!-- add comment if logged in -->
+    {{#if loggedIn}}
+    <form id="comment-form">
+        <br>
+
+        <textarea id="comment-text" name="comment-text" placeholder="Your thoughts?"></textarea>
+        
+        <div class="comment-post">
+        <button id="submit-btn" type="submit">Post</button>
+        </div>
+    </form>
+    {{/if}}
+
+    <!-- comments -->
+    <section id="comment-container">
+        {{#each post.comments as |comment|}}
+        <div>
+            {{> comment comment}}
+        </div>
+        {{/each}}
+    </section>
+</div>
+
+<!-- internal js script loading -->
+<script src="/javascript/submit-comment.js"></script>

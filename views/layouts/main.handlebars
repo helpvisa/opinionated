@@ -1,1 +1,64 @@
 <!-- main page layout -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinionated</title>
+
+    <!-- External css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Internal css -->
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+    <!-- Top nav bar (fixed) -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <span class="logo"><a class="no-dec" href="/">OPINIONATED</a></span>
+
+        <!-- Menu -->
+        <div id="menu">
+            {{#if loggedIn}}
+            <label id="user-handle"></label>
+            <p class="align-right navbar-padding"><span id="dash" class="clickable">{{user}}</span></p>
+            <div id="img-dropdown" class="clickable hide">
+                <!-- possibility of adding an avatar -->
+                <!-- <img id="" class="clickable"> -->
+                <div id="logged-menu">
+                <ul>
+                    <li id="logout" class="clickable">Logout</li>
+                    <li id="profile" class="clickable"><a class="no-dec" href="/{{user}}">Profile</a></li>
+                </ul>
+                </div>
+            </div>
+            {{else}}
+            <span id="show-register" class="clickable">Register</span>
+            <span id="show-login" class="clickable">Login</span>
+            {{/if}}
+        </div>
+    </nav>
+
+    <!-- login partial -->
+    <div>
+        {{> login}}
+        {{> register}}
+    </div>
+
+    <!-- Main content here -->
+    <main class="container">
+        {{{ body }}}
+    </main>
+
+    <!-- External JS -->
+
+    <!-- Internal JS -->
+    <script src="/javascript/main.js"></script>
+    <script src="/javascript/login.js"></script>
+    <script src="/javascript/logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinionated</title>
+
+    <!-- External css -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Internal css -->
+    <link rel="stylesheet" href="./public/stylesheets/styles.css">
+
+  </head>
+  <body>
+    
+    <!-- Top nav bar (fixed) -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <span class="logo">OPINIONATED</span>
+
+      <!-- Menu -->
+      <div id="menu">
+        <span id="show-register" class="clickable">Register</span>
+        <span id="show-login" class="clickable">Login</span>
+        <label id="user-handle" class="hide"></label>
+        <div id="img-dropdown" class="clickable">
+          <!-- possibility of adding an avatar -->
+          <!-- <img id="" class="clickable"> -->
+          <div id="logged-menu" class="hide">
+            <ul>
+              <li id="logout" class="clickable">Logout</li>
+              <li id="settings" class="clickable">Settings</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main content here -->
+    <main class="container">
+      <section class="new-opinion hide">
+        <h3>What are you thinking about?</h3>
+
+        <!-- action must be added -->
+        <form method="POST" action="">
+          <br>
+          <textarea placeholder="What are you thinking about?" name="text"></textarea>
+          <div class="opinion-post">
+            <button id="submit-btn" type="submit">Post</button>
+          </div>
+        </form>
+      </section>
+      <section id="opinion-container"></section>
+    </main>
+
+    <!-- Login modal box -->
+    <div id="login-modal" class="modal hide">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Login</h1>
+        <label>Email/Username:</label>
+        <br>
+        <input id="login_emailusername" type="text">
+        <span id="login_emailusername_miss" class="star hide error">&#42;</span>
+        <br>
+        <br>
+        <label>Password:</label>
+        <br>
+        <input id="login_pw" type="password">
+        <span id="login_pw_miss" class="star hide error">&#42;</span>
+        <br>
+        <div id="login_error" class="hide">
+          <span class="flashMsg error"><i>Email/Username</i> and <i>Password</i> does not match.</span>
+        </div>
+        <br>
+        <br>
+        <input id="login" type="submit" value="Login">
+      </div>
+    </div>
+
+    <!-- Login modal box -->
+    <div id="login-modal" class="modal hide">
+      <div class="modal-content">
+        <span class="close clickable">&times</span>
+        <h1>Register</h1>
+        <label>First Name:</label>
+        <br>
+        <input id="register-fname" type="text">
+        <span id="register-fname-miss" class="star hide error">&#42;</span>
+        <br>
+        <br>
+        <label>Last Name:</label>
+        <br>
+        <input id="register_lname" type="text">
+        <span id="register_lname_miss" class="star hide error">&#42;</span>
+        <br>
+        <br>
+        <label>Username:</label>
+        <br>
+        <input id="register_username" type="text">
+        <span id="register_username_miss" class="star hide error">&#42;</span>
+        <br>
+        <div id="register_username_err" class="hide">
+          <span class="flashMsg error">This username has already been registered.</span>
+          <br>
+        </div>
+        <br>
+        <label>Email:</label>
+        <br>
+        <input id="register_email" type="email">
+        <span id="register_email_miss" class="star hide error">&#42;</span>
+        <br>
+        <div id="register_email_error" class="hide">
+          <span class="flashMsg error">This email has already been registered.</span>
+          <br>
+        </div>
+        <br>
+        <label>Password:</label>
+        <br>
+        <input id="register_pw" type="password">
+        <span id="register_pw_miss"  class="star hide error">&#42;</span>
+        <br>
+        <br>
+        <br>
+        <input id="register" type="submit" value="Register">
+      </div>
+    </div>
+
+    <!-- External JS -->
+
+    <!-- Internal JS -->
+    
+  </body>
+  </html>
