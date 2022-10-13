@@ -119,6 +119,10 @@ textarea {
   text-align: right;
 }
 
+.align-left {
+  text-align: left;
+}
+
 .navbar-padding {
   padding: 0px;
   margin: 0px;

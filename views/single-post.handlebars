@@ -1,0 +1,20 @@
+<!-- external js (needs to be first) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="column">
+    <!-- main post -->
+    <section id="opinion-container">
+        <div>
+            {{> post post}}
+        </div>
+    </section>
+
+    <!-- comments -->
+    <section id="comment-container">
+        {{#each post.comments as |comment|}}
+        <div>
+            {{> comment comment}}
+        </div>
+        {{/each}}
+    </section>
+</div>

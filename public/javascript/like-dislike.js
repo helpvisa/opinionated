@@ -13,7 +13,7 @@ opinionEl.addEventListener('click', (event) => {
     } else if (event.target.classList.contains("comment-page")) {
         id = event.target.getAttribute("data-post-id");
         // console.log('go to comments' + id);
-        document.location.replace('/posts/' + id);
+        document.location.replace('/post/' + id);
     }
 });
 
