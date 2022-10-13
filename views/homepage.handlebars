@@ -5,7 +5,11 @@
         <!-- action must be added -->
         <form id="opinion-form">
             <br>
-            <textarea placeholder="What are you thinking about?" name="text"></textarea>
+            <label for="opinion-name">In your opinion:</label>
+            <input type="text" id="opinion-name" name="opinion-name" />
+
+            <textarea id="opinion-text" name="opinion-text" placeholder="Care to elaborate?" name="text"></textarea>
+            
             <div class="opinion-post">
             <button id="submit-btn" type="submit">Post</button>
             </div>
@@ -24,3 +28,7 @@
         {{/each}}
     </section>
 </div>
+
+<!-- load js -->
+<script src="/javascript/new-opinion.js"></script>
+<script src="/javascript/like-dislike.js"></script>
