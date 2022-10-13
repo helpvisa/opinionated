@@ -1,1 +1,52 @@
 <!-- main page layout -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinionated</title>
+
+    <!-- External css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Internal css -->
+    <link rel="stylesheet" href="./stylesheets/styles.css">
+</head>
+
+<body>
+    <!-- Top nav bar (fixed) -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <span class="logo">OPINIONATED</span>
+
+        <!-- Menu -->
+        <div id="menu">
+        <span id="show-register" class="clickable">Register</span>
+        <span id="show-login" class="clickable">Login</span>
+        <label id="user-handle" class="hide"></label>
+        <div id="img-dropdown" class="clickable">
+            <!-- possibility of adding an avatar -->
+            <!-- <img id="" class="clickable"> -->
+            <div id="logged-menu" class="hide">
+            <ul>
+                <li id="logout" class="clickable">Logout</li>
+                <li id="settings" class="clickable">Settings</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Main content here -->
+    <main class="container">
+        {{{ body }}}
+    </main>
+
+    <!-- External JS -->
+
+    <!-- Internal JS -->
+
+</body>
+</html>

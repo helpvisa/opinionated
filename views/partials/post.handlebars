@@ -1,0 +1,15 @@
+<!-- display data for given post -->
+<article>
+    <!-- opinion name -->
+    <div>
+        <h2><a href="/post/{{id}}">{{name}}</a></h2>
+        <h4>In the opinion of {{user.username}}</h4>
+        <h5>Thought up on {{formatDate created_date}}</h5>
+    </div>
+    <!-- opinion content -->
+    <div>
+        <p>{{content}}</p>
+    </div>
+    <!-- comment count -->
+    <h6>{{comment_count}} comments</h6>
+</article>

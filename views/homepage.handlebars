@@ -1,0 +1,21 @@
+<section class="new-opinion hide">
+    <h3>What are you thinking about?</h3>
+
+    <!-- action must be added -->
+    <form method="POST" action="">
+        <br>
+        <textarea placeholder="What are you thinking about?" name="text"></textarea>
+        <div class="opinion-post">
+        <button id="submit-btn" type="submit">Post</button>
+        </div>
+    </form>
+</section>
+
+<!-- holds others' posts / opinions -->
+<section id="opinion-container">
+    {{#each posts as |post|}} <!-- loop over each post -->
+    <div>
+        {{> post post}}
+    </div>
+    {{/each}}
+</section>
