@@ -119,6 +119,10 @@ textarea {
   text-align: right;
 }
 
+.align-left {
+  text-align: left;
+}
+
 .navbar-padding {
   padding: 0px;
   margin: 0px;
@@ -127,4 +131,22 @@ textarea {
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.no-dec {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link {
+  color: lightblue;
+}
+
+.username {
+  color: lightcoral;
+}
+
+.bottom-border {
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 2px;
 }

@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
             'user_id',
             'post_id'
         ],
+        order: [['created_date', 'DESC']],
         include: [
             {
                 model: User,

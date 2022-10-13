@@ -1,0 +1,23 @@
+<!-- external js (needs to be first) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="column">
+    {{#if hasPosts}}
+    <div>
+        <h1>{{viewed_user}}'s Posts:</h1>
+    </div>
+
+    <!-- user posts -->
+    <section id="opinion-container">
+        {{#each posts as |post|}} <!-- loop over each post -->
+        <div>
+            {{> post post}}
+        </div>
+        {{/each}}
+    </section>
+    {{else}}
+    <div>
+        <h1>{{viewed_user}} has no posts!</h1>
+    </div>
+    {{/if}}
+</div>
