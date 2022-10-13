@@ -1,1 +1,114 @@
-/* css styles here */
+/* CSS DIRECTORY
+  1. =GLOBAL
+  2. =NAVIGATION BAR
+  3. =HOMEPAGE
+*/
+
+/* ===1. GLOBAL === */
+
+* {
+  box-sizing: border-box;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary-color: DarkGreen;
+  --secondary-color: seaGreen;
+  --tertiary-color: White;
+  --quaternary-color: lightgrey;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--quaternary-color);
+}
+
+.clickable {
+  cursor: pointer
+}
+
+.hide {
+  display: none;
+}
+
+.error {
+  /* maybe another color! */
+  color: brown;
+}
+
+.modal {
+  
+}
+
+/* ===2. NAVIGATION BAR === */
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: .3rem;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+.logo:hover{
+  color: darkseagreen;
+}
+
+.account:hover {
+  color: darkseagreen;
+}
+
+/* ===3. HOMEPAGE === */
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--secondary-color)
+}
+
+.new-opinion {
+  color: var(--tertiary-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 20px;
+}
+
+.new-opinion h3 {
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 2px;
+  letter-spacing: .1rem;
+  font-size: larger;
+}
+
+#submit-btn {
+  background-color: var(--tertiary-color);
+  border: none;
+  color: var(--secondary-color);
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border: 2px solid var(--quaternary-color);
+  border-radius: 4px;
+}
+
+#submit-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+textarea {
+  width: 90%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid var(--quaternary-color);
+  border-radius: 4px;
+  background-color: var(--tertiary-color);
+  font-size: 16px;
+  resize: none;
+}
