@@ -1,4 +1,8 @@
+<!-- external js (needs to be first) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <div class="column">
+    {{#if loggedIn}}
     <section class="new-opinion">
         <h3>What are you thinking about?</h3>
 
@@ -18,6 +22,7 @@
 
     <!-- place divider here? -->
     <span>=================</span>
+    {{/if}}
 
     <!-- holds others' posts / opinions -->
     <section id="opinion-container">
@@ -30,5 +35,6 @@
 </div>
 
 <!-- load js -->
+<!-- internal -->
 <script src="/javascript/new-opinion.js"></script>
 <script src="/javascript/like-dislike.js"></script>
