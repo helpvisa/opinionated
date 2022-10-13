@@ -11,5 +11,9 @@
         <p>{{content}}</p>
     </div>
     <!-- comment count -->
-    <h6>{{comment_count}} comments</h6>
+    <h6>
+        {{like_count}} {{formatPlural 'like' like_count}} | 
+        {{dislike_count}} {{formatPlural 'dislike' dislike_count}} | 
+        {{comment_count}} {{formatPlural 'comment' comment_count}}
+    </h6>
 </article>
