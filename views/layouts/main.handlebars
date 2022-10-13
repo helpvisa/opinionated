@@ -25,13 +25,14 @@
         <div id="menu">
             {{#if loggedIn}}
             <label id="user-handle"></label>
-            <div id="img-dropdown" class="clickable">
+            <p class="align-right navbar-padding"><span id="dash" class="clickable">{{user}}</span></p>
+            <div id="img-dropdown" class="clickable hide">
                 <!-- possibility of adding an avatar -->
                 <!-- <img id="" class="clickable"> -->
                 <div id="logged-menu">
                 <ul>
                     <li id="logout" class="clickable">Logout</li>
-                    <li id="settings" class="clickable">Settings</li>
+                    <li id="profile" class="clickable">Profile</li>
                 </ul>
                 </div>
             </div>
@@ -56,6 +57,7 @@
     <!-- External JS -->
 
     <!-- Internal JS -->
+    <script src="/javascript/main.js"></script>
     <script src="/javascript/login.js"></script>
     <script src="/javascript/logout.js"></script>
 </body>

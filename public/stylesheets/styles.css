@@ -2,6 +2,7 @@
   1. =GLOBAL
   2. =NAVIGATION BAR
   3. =HOMEPAGE
+  4. =HELPERS
 */
 
 /* ===1. GLOBAL === */
@@ -111,4 +112,19 @@ textarea {
   background-color: var(--tertiary-color);
   font-size: 16px;
   resize: none;
+}
+
+/* ===4. HELPERS === */
+.align-right {
+  text-align: right;
+}
+
+.navbar-padding {
+  padding: 0px;
+  margin: 0px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }

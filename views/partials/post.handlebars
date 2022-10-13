@@ -13,8 +13,8 @@
     </div>
     <!-- comment count -->
     <h6>
-        {{like_count}} {{formatPlural 'like' like_count}} | 
-        {{dislike_count}} {{formatPlural 'dislike' dislike_count}} | 
-        {{comment_count}} {{formatPlural 'comment' comment_count}}
+        <span class="clickable">{{like_count}} {{formatPlural 'like' like_count}}</span> | <!-- make clickable -->
+        <span class="clickable">{{dislike_count}} {{formatPlural 'dislike' dislike_count}}</span> | <!-- make clickable -->
+        <span class="clickable">{{comment_count}} {{formatPlural 'comment' comment_count}}</span>
     </h6>
 </article>

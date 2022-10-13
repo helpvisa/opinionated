@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
         // map and serialize
         const posts = data.map(post => post.get({plain: true}));
         // render page and pass in posts
-        res.render('homepage', {posts, loggedIn: req.session.loggedIn});
+        res.render('homepage', {posts, loggedIn: req.session.loggedIn, user: req.session.username});
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
