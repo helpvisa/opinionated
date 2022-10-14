@@ -10,10 +10,6 @@ opinionEl.addEventListener('click', (event) => {
         id = event.target.getAttribute("data-post-id");
         // console.log('disliked' + id);
         sendDislike(id, event.target);
-    } else if (event.target.classList.contains("comment-page")) {
-        id = event.target.getAttribute("data-post-id");
-        // console.log('go to comments' + id);
-        document.location.replace('/post/' + id);
     }
 });
 

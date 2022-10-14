@@ -65,11 +65,16 @@
         </script>
     </div>
 
+    <!-- delete post -->
+    <div>
+        <button data-post-id="{{id}}" class="delete-post">Delete Post</button>
+    </div>
+
     <!-- comment count -->
     <h6>
-        <span data-post-id="{{id}}" class="clickable like">{{like_count}} {{formatPlural 'like' like_count}}</span> | <!-- make clickable -->
-        <span data-post-id="{{id}}" class="clickable dislike">{{dislike_count}} {{formatPlural 'dislike' dislike_count}}</span> | <!-- make clickable -->
-        <span data-post-id="{{id}}" class="clickable comment-page">{{comment_count}} {{formatPlural 'comment' comment_count}}</span>
+        <span data-post-id="{{id}}" class="clickable like green">{{like_count}} {{formatPlural 'like' like_count}}</span> | <!-- make clickable -->
+        <span data-post-id="{{id}}" class="clickable dislike red">{{dislike_count}} {{formatPlural 'dislike' dislike_count}}</span> | <!-- make clickable -->
+        <span data-post-id="{{id}}" class="clickable comment-page"><a class="no-dec link" href="/post/{{id}}">{{comment_count}} {{formatPlural 'comment' comment_count}}</a></span>
     </h6>
 
     <div class="bottom-border"></div>
