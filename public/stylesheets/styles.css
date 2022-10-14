@@ -131,6 +131,8 @@ textarea {
 .column {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: auto;
 }
 
 .no-dec {
@@ -160,7 +162,7 @@ textarea {
 }
 
 .graph-constraint {
-  max-width: 20vw;
-  max-height: 20vh;
+  max-width: 300px;
+  max-height: 300px;
   margin: auto;
 }

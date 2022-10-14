@@ -12,5 +12,10 @@ function formatPlural(word, amount) {
     return word;
 }
 
+// determine if a post is by a user
+function isByUser(id, user_id) {
+    return id == user_id;
+}
+
 // export helpers
-module.exports = {formatDate, formatPlural};
+module.exports = {formatDate, formatPlural, isByUser};

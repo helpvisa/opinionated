@@ -2,24 +2,26 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="column">
-    {{#if loggedIn}}
-    <section class="new-opinion">
-        <h3>What are you thinking about?</h3>
+    <div class="column">
+        {{#if loggedIn}}
+        <section class="new-opinion">
+            <h3>What are you thinking about?</h3>
 
-        <!-- action must be added -->
-        <form id="opinion-form">
-            <br>
+            <!-- action must be added -->
+            <form id="opinion-form">
+                <br>
 
-            <label for="opinion-name">In your opinion:</label>
-            <input type="text" id="opinion-name" name="opinion-name" />
+                <label for="opinion-name">In your opinion:</label>
+                <input type="text" id="opinion-name" name="opinion-name" />
 
-            <textarea id="opinion-text" name="opinion-text" placeholder="Care to elaborate?"></textarea>
-            
-            <div class="opinion-post">
-            <button id="submit-btn" type="submit">Post</button>
-            </div>
-        </form>
-    </section>
+                <textarea id="opinion-text" name="opinion-text" placeholder="Care to elaborate?"></textarea>
+                
+                <div class="opinion-post">
+                <button id="submit-btn" type="submit">Post</button>
+                </div>
+            </form>
+        </section>
+    </div>
 
     <!-- place divider here? -->
     <span class="bottom-border"></span>
@@ -29,7 +31,7 @@
     <section id="opinion-container">
         {{#each posts as |post|}} <!-- loop over each post -->
         <div>
-            {{> post post }}
+            {{> small-post post}}
         </div>
         {{/each}}
     </section>

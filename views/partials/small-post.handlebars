@@ -8,11 +8,6 @@
         <h5>Thought up on {{formatDate created_date}}</h5>
     </div>
 
-    <!-- opinion content -->
-    <div>
-        <p>{{content}}</p>
-    </div>
-
     <!-- likes/dislikes bar graph -->
     <div>
         <div class="graph-constraint">
@@ -64,15 +59,6 @@
             );
         </script>
     </div>
-
-    <!-- delete post -->
-    {{#if loggedIn}}
-    {{#if (isByUser user.id user_id)}}
-    <div>
-        <button data-post-id="{{id}}" class="delete-post">Delete Post</button>
-    </div>
-    {{/if}}
-    {{/if}}
 
     <!-- comment count -->
     <h6>

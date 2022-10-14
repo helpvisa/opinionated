@@ -2,34 +2,40 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="column">
-    <!-- main post -->
-    <section id="opinion-container">
-        <div>
-            {{> post post}}
-        </div>
-    </section>
+    <div class="column">
+        <!-- main post -->
+        <section id="opinion-container">
+            <div>
+                {{> post post}}
+            </div>
+        </section>
 
-    <!-- add comment if logged in -->
-    {{#if loggedIn}}
-    <form id="comment-form">
-        <br>
+        <!-- add comment if logged in -->
+        {{#if loggedIn}}
+        <form id="comment-form">
+            <br>
 
-        <textarea id="comment-text" name="comment-text" placeholder="Your thoughts?"></textarea>
-        
-        <div class="comment-post">
-        <button id="submit-btn" type="submit">Post</button>
-        </div>
-    </form>
-    {{/if}}
+            <textarea id="comment-text" name="comment-text" placeholder="Your thoughts?"></textarea>
+            
+            <div class="comment-post">
+            <button id="submit-btn" type="submit">Post</button>
+            </div>
+        </form>
+        {{/if}}
 
-    <!-- comments -->
-    <section id="comment-container">
-        {{#each post.comments as |comment|}}
-        <div>
-            {{> comment comment}}
-        </div>
-        {{/each}}
-    </section>
+        <div class="bottom-border"></div>
+    </div>
+
+    <div class="column">
+        <!-- comments -->
+        <section id="comment-container">
+            {{#each post.comments as |comment|}}
+            <div class="column">
+                {{> comment comment}}
+            </div>
+            {{/each}}
+        </section>
+    </div>
 </div>
 
 <!-- internal js script loading -->

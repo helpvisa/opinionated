@@ -28,17 +28,19 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'id']
             }
         ]
     }).then(data => {
         // map and serialize
         const posts = data.map(post => post.get({plain: true}));
+        // we pass values in here so they can be used in the partial; each post will have same value. better way to do this?
         posts.forEach(post => {
             post.loggedIn = req.session.loggedIn;
+            post.user_id = req.session.user_id;
         });
         // render page and pass in posts
-        res.render('homepage', {posts, loggedIn: req.session.loggedIn, user: req.session.username});
+        res.render('homepage', {posts, loggedIn: req.session.loggedIn, user_id: req.session.user_id, user: req.session.username});
     }).catch(err => {
         console.log(err);
         res.status(500).send("<h1>500!</h1>");
@@ -71,7 +73,7 @@ router.get('/post/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'id']
             },
             {
                 model: Comment,
@@ -81,7 +83,7 @@ router.get('/post/:id', (req, res) => {
                 ],
                 include: {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'id']
                 }
             }
         ],
@@ -91,9 +93,11 @@ router.get('/post/:id', (req, res) => {
     }).then(data => {
         // map and serialize
         const post = data.get({plain: true});
+        // we pass values in here so they can be used in the partial; each post will have same value. better way to do this?
         post.loggedIn = req.session.loggedIn;
+        post.user_id = req.session.user_id;
         // render page and pass in posts
-        res.render('single-post', {post, loggedIn: req.session.loggedIn, user: req.session.username});
+        res.render('single-post', {post, loggedIn: req.session.loggedIn, user_id: req.session.user_id, user: req.session.username});
     }).catch(err => {
         console.log(err);
         res.status(500).send("<h1>500!</h1>");
@@ -139,15 +143,17 @@ router.get('/:user', (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'id']
                 }
             ]
         }).then(data => {
             let hasPosts = true;
             // map and serialize
             const posts = data.map(post => post.get({ plain: true }));
+            // we pass values in here so they can be used in the partial; each post will have same value. better way to do this?
             posts.forEach(post => {
                 post.loggedIn = req.session.loggedIn;
+                post.user_id = req.session.user_id;
             });
 
             if (posts.length < 1) {
@@ -155,7 +161,7 @@ router.get('/:user', (req, res) => {
             }
 
             // render page and pass in posts
-            res.render('user', {posts, loggedIn: req.session.loggedIn, user: req.session.username, viewed_user: req.params.user, hasPosts});
+            res.render('user', {posts, loggedIn: req.session.loggedIn, user: req.session.username, user_id: req.session.user_id, viewed_user: req.params.user, hasPosts});
             
         }).catch(err => {
             console.log(err);
