@@ -5,6 +5,7 @@
 * [Technologies used](#Technologies-used)
 * [Mockup](#Mockup)
 * [How to install and run the project](#How-to-install-and-run-the-project)
+* [How to use the project](#How-to-use-the-project)
 * [Link URL to deployed app](#Link-URL-to-deployed-app-on-GitHub)
 * [Credits](#Credits)
 
@@ -28,6 +29,10 @@ Project is created using:
 * HTML , CSS , Java Script and OOP
 
 ## Mockup
+
+![screenshot1](img/screenshots/screenshot1.jpg)
+
+![screenshot2](img/screenshots/screenshot2.jpg)
 
 ## How to install and run the project
 Here are some guidelines for installing the project on your local machine:
