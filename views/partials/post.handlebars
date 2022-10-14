@@ -66,9 +66,11 @@
     </div>
 
     <!-- delete post -->
+    {{#if loggedIn}}
     <div>
         <button data-post-id="{{id}}" class="delete-post">Delete Post</button>
     </div>
+    {{/if}}
 
     <!-- comment count -->
     <h6>

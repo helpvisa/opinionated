@@ -34,6 +34,9 @@ router.get('/', (req, res) => {
     }).then(data => {
         // map and serialize
         const posts = data.map(post => post.get({plain: true}));
+        posts.forEach(post => {
+            post.loggedIn = req.session.loggedIn;
+        });
         // render page and pass in posts
         res.render('homepage', {posts, loggedIn: req.session.loggedIn, user: req.session.username});
     }).catch(err => {
@@ -88,6 +91,7 @@ router.get('/post/:id', (req, res) => {
     }).then(data => {
         // map and serialize
         const post = data.get({plain: true});
+        post.loggedIn = req.session.loggedIn;
         // render page and pass in posts
         res.render('single-post', {post, loggedIn: req.session.loggedIn, user: req.session.username});
     }).catch(err => {
@@ -142,6 +146,9 @@ router.get('/:user', (req, res) => {
             let hasPosts = true;
             // map and serialize
             const posts = data.map(post => post.get({ plain: true }));
+            posts.forEach(post => {
+                post.loggedIn = req.session.loggedIn;
+            });
 
             if (posts.length < 1) {
                 hasPosts = false;
