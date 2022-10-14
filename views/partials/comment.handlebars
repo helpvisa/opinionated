@@ -5,5 +5,9 @@
 
     <!-- content -->
     <p>{{content}}</p>
+    {{#if loggedIn}}
+    {{#if (isByUser user.id user_id)}}
     <button data-comment-id="{{id}}" class="delete-comment">Delete Comment</button>
+    {{/if}}
+    {{/if}}
 </div>

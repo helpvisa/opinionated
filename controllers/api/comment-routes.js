@@ -57,7 +57,8 @@ router.post('/', auth, (req, res) => {
 router.delete('/:id', auth, (req, res) => {
     Comment.destroy({
         where: {
-            id: req.params.id
+            id: req.params.id,
+            user_id: req.session.user_id
         }
     })
     .then(data => {

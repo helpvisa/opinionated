@@ -31,7 +31,7 @@
         <section id="comment-container">
             {{#each post.comments as |comment|}}
             <div class="column">
-                {{> comment comment}}
+                {{> comment this }}
             </div>
             {{/each}}
         </section>

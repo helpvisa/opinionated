@@ -96,6 +96,10 @@ router.get('/post/:id', (req, res) => {
         // we pass values in here so they can be used in the partial; each post will have same value. better way to do this?
         post.loggedIn = req.session.loggedIn;
         post.user_id = req.session.user_id;
+        post.comments.forEach(comment => {
+            comment.loggedIn = req.session.loggedIn;
+            comment.user_id = req.session.user_id;
+        });
         // render page and pass in posts
         res.render('single-post', {post, loggedIn: req.session.loggedIn, user_id: req.session.user_id, user: req.session.username});
     }).catch(err => {
